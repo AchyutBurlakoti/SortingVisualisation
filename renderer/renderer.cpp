@@ -9,8 +9,6 @@ extern uint16_t canvas_height;
 extern uint16_t rectangle_width;
 extern uint16_t rectangle_number;
 extern std::vector<int> random_number;
-extern std::future<void> thread;
-extern bool start_sorting;
 
 renderer::renderer()
 {
