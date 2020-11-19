@@ -1,7 +1,7 @@
 # Sorting Visualisation
-project by :\
-Tilak Chad\
-Tapendra Pandey\
-Achyut Burlakoti\
-snapshot\
+Project by :
+- Tilak Chad
+- Tapendra Pandey
+- Achyut Burlakoti
+#Snapshot
 ![alt tag](https://github.com/AchyutBurlakoti/SortingVisualisation/blob/master/sorting.jpg)
