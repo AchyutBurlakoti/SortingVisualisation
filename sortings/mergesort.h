@@ -12,7 +12,7 @@ inline void swapping(int &a, int &b)
    int temporary;
    temporary = a;
    a = b;
-   b = temp;
+   b = temporary;
 }
 
 inline void merge(int l, int m, int r) 
