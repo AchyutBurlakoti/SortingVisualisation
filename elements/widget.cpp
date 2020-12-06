@@ -4,7 +4,6 @@
 
 extern Window *w;
 extern bool start_sorting;
-extern bool terminate_thread;
 
 widget::widget()
 {
@@ -33,16 +32,16 @@ widget::widget()
 
 void widget::w_reset()
 {
-    //if(!start_sorting)
-    //{
+    if(!start_sorting)
+    {
         dimension_set();
-    //}
+    }
 }
 
 void widget::w_sort()
 {
+    if(!start_sorting) StartSorting();
     start_sorting = true;
-    StartSorting();
 }
 
 void widget::text(const QString &t)

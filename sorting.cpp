@@ -69,3 +69,17 @@ void dimension_set()
         random_number.push_back(n_random);
     }
 }
+
+template<typename T>
+bool thread_is_finished(std::future<T> &t)
+{
+    return t.wait_for(std::chrono::seconds(0)) == std::future_status::ready;
+}
+
+void IsSortingCompleted()
+{
+    if(thread_is_finished(thread))
+    {
+        start_sorting = false;
+    }
+}

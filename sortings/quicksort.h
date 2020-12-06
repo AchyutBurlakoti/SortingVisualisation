@@ -4,14 +4,14 @@
 #include "sorting.h"
 extern std::vector<int> random_number;
 
-inline void swap(int* a, int* b)
+void swap(int* a, int* b)
 {
     int t = *a;
     *a = *b;
     *b = t;
 }
 
-inline int partition (int low, int high)
+int partition (int low, int high)
 {
     int pivot = random_number[high];    // pivot
     int i = (low - 1);  // Index of smaller element
@@ -31,7 +31,7 @@ inline int partition (int low, int high)
     return (i + 1);
 }
 
-inline void quickSort(int low, int high)
+void quickSort(int low, int high)
 {
     if (low < high)
     {

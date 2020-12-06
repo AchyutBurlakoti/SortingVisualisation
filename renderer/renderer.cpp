@@ -42,4 +42,5 @@ void renderer::drawrectangles()
         _rectangle->setSize(rectangle_width, random_number[i]);
         _canvas->addItem2scene(_rectangle);
     }
+    if (start_sorting) IsSortingCompleted();
 }

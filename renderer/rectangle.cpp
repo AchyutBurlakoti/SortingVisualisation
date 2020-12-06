@@ -2,7 +2,7 @@
 
 rectangle::rectangle()
 {
-
+    Brush = QBrush(Qt::green);
 }
 
 void rectangle::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
