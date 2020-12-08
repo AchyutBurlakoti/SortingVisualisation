@@ -26,6 +26,10 @@ void SelectSort(const QString str)
     {
         sortname = QUICK_SORT;
     }
+    if (str == "Quick3way Sort")
+    {
+        sortname = QUICK3WAY_SORT;
+    }
 }
 
 void StartSorting()
@@ -47,25 +51,23 @@ void StartSorting()
             thread = std::async(std::launch::async, mergeSort, 0, rectangle_number - 1);
             break;
         }
-
+        case QUICK3WAY_SORT:
+        {
+            thread = std::async(std::launch::async, quick3Sort, 0, rectangle_number - 1);
+            break;
+        }
     }
 }
 
 void dimension_set()
 {
+    srand((unsigned) time(0));
     if(!random_number.empty()) random_number.clear();
     rectangle_number = canvas_width / rectangle_width;
-    for (int i = 0; i < rectangle_number; i++)
+    for (int i = 0; i < rectangle_number - 1; i++)
     {
-        float n_random = (qrand() % 10) * (qrand() % 10) * (qrand() % 10);
-        if(n_random == 0) n_random = (qrand() % 10) * (qrand() % 10) * (qrand() % 10);
-        if(n_random == 0) n_random = (qrand() % 10) * (qrand() % 10) * (qrand() % 10);
-        if(n_random == 0) n_random = (qrand() % 10) * (qrand() % 10) * (qrand() % 10);
-        if(n_random == 0) n_random = (qrand() % 10) * (qrand() % 10) * (qrand() % 10);
-        if(n_random == 0) n_random = (qrand() % 10) * (qrand() % 10) * (qrand() % 10);
-        if(n_random == 0) n_random = (qrand() % 10) * (qrand() % 10) * (qrand() % 10);
-        if(n_random == 0) n_random = (qrand() % 10) * (qrand() % 10) * (qrand() % 10);
-        if(n_random == 0) n_random = (qrand() % 10) * (qrand() % 10) * (qrand() % 10);
+        float n_random = (rand() % (canvas_height - 150)) + 1;
+        if (i % 2 == 0) n_random = (rand() % (canvas_height / 2) + 1);
         random_number.push_back(n_random);
     }
 }

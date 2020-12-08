@@ -26,7 +26,7 @@ widget::widget()
     s_slider->setValue(1);
 
     box->setSize(150, 25);
-    box->addListItems({ "Bubble Sort", "Quick Sort", "Merge Sort", "Insertion Sort" , "Selection Sort", "Radix Sort", "Shell Sort"});
+    box->addListItems({ "Bubble Sort", "Quick Sort", "Merge Sort", "Quick3way Sort"});
     box->setLocation(w->w_width - 170, 60);
 }
 

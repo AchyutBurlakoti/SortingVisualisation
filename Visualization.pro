@@ -21,11 +21,13 @@ SOURCES += \
     window/window.cpp
 
 HEADERS += \
+    sorting.h \
     sortings/bubblesort.h \
     elements/button.h \
     renderer/canvas.h \
     elements/combobox.h \
     sortings/mergesort.h \
+    sortings/quick3sort.h \
     sortings/quicksort.h \
     renderer/rectangle.h \
     renderer/renderer.h \

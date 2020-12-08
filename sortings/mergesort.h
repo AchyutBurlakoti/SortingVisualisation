@@ -46,17 +46,19 @@ inline void merge(int l, int m, int r)
          random_number[k] = rarr[j];
          j++;
       }
-      std::this_thread::sleep_for(std::chrono::milliseconds(10));
+      std::this_thread::sleep_for(std::chrono::milliseconds(50));
       k++;
    }
    while(i<nl) 
    {       //extra element in left array
       random_number[k] = larr[i];
+      std::this_thread::sleep_for(std::chrono::milliseconds(10));
       i++; k++;
    }
    while(j<nr) 
    {     //extra element in right array
       random_number[k] = rarr[j];
+      std::this_thread::sleep_for(std::chrono::milliseconds(10));
       j++; k++;
    }
    start_sorting = true;

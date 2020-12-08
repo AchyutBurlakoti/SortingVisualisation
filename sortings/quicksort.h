@@ -4,40 +4,47 @@
 #include "sorting.h"
 extern std::vector<int> random_number;
 
-void swap(int* a, int* b)
+#include <iostream>
+
+inline void swap(int *a, int *b)
 {
-    int t = *a;
+    int temp = *a;
     *a = *b;
-    *b = t;
+    *b = temp;
 }
 
-int partition (int low, int high)
+inline bool less(int a, int b)
 {
-    int pivot = random_number[high];    // pivot
-    int i = (low - 1);  // Index of smaller element
+    return a < b;
+}
 
-    for (int j = low; j <= high- 1; j++)
+inline int partition(int l, int r)
+{
+    int i = l - 1;
+    int j = r;
+    int v = random_number[r];
+
+    for(;;)
     {
-        // If current element is smaller than or
-        // equal to pivot
-        if (random_number[j] <= pivot)
-        {
-            i++;    // increment index of smaller element
-            swap(&random_number[i], &random_number[j]);
-            std::this_thread::sleep_for(std::chrono::milliseconds(10));
-        }
+        while (less(random_number[++i], v));
+        while (less(v, random_number[--j])) if (j == l) break;
+        if (i >= j) break;
+        swap(&random_number[i], &random_number[j]);
+        std::this_thread::sleep_for(std::chrono::milliseconds(50));
     }
-    swap(&random_number[i + 1], &random_number[high]);
-    return (i + 1);
+    swap(&random_number[i], &random_number[r]);
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    return i;
 }
 
-void quickSort(int low, int high)
+inline void quickSort(int l, int r)
 {
-    if (low < high)
+    if (l < r)
     {
-        int pi = partition(low, high);
-        quickSort(low, pi - 1);
-        quickSort(pi + 1, high);
+        int i;
+        i = partition(l, r);
+        quickSort(l, i - 1);
+        quickSort(i + 1, r);
     }
 }
 

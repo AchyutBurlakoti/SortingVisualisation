@@ -35,7 +35,7 @@ void renderer::start()
 void renderer::drawrectangles()
 {
     _canvas->clearScene();
-    for(int i = 0; i < rectangle_number; i++)
+    for(int i = 0; i < rectangle_number - 1; i++)
     {
         rectangle *_rectangle = new rectangle;
         _rectangle->setLocation(i * rectangle_width, canvas_height - random_number[i] - 4);

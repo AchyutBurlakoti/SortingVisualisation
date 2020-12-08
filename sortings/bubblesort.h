@@ -8,10 +8,10 @@ extern bool start_sorting;
 inline void bubbleSort()
 {
     int i, j;
-    for (i = 0; i < (int)random_number.size(); i++)
+    for (i = 0; i < (int)random_number.size() - 1; i++)
     {
         // Last i elements are already in place
-        for (j = 0; j < (int)random_number.size() - i; j++)
+        for (j = 0; j < (int)random_number.size() - 1 - i; j++)
         {
             if (random_number[j] > random_number[j+1])
             {
