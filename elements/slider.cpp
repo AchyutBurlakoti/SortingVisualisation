@@ -32,6 +32,6 @@ void slider::connection()
 
 void slider::setValue(int value)
 {
-    rectangle_width = (value / 10) + 1;
+    rectangle_width = (value / 5) + 5;
     dimension_set();
 }
